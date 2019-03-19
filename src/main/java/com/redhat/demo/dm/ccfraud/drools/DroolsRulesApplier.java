@@ -3,7 +3,6 @@ package com.redhat.demo.dm.ccfraud.drools;
 import com.google.gson.Gson;
 import com.redhat.demo.dm.ccfraud.CreditCardTransactionRepository;
 import com.redhat.demo.dm.ccfraud.InMemoryCreditCardTransactionRepository;
-import com.redhat.demo.dm.ccfraud.Main;
 import com.redhat.demo.dm.ccfraud.domain.CreditCardTransaction;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.EntryPoint;
@@ -19,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class DroolsRulesApplier {
     private static KieSession KIE_SESSION;
     private static CreditCardTransactionRepository cctRepository = new InMemoryCreditCardTransactionRepository();
-    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DroolsRulesApplier.class);
 
     public DroolsRulesApplier(String sessionName) {
         KIE_SESSION = DroolsSessionFactory.createDroolsSession(sessionName);
